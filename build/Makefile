@@ -117,24 +117,96 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_threadPool
+# Target rules for targets named server
 
 # Build rule for target.
-test_threadPool: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_threadPool
-.PHONY : test_threadPool
+server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
+.PHONY : server
 
 # fast build rule for target.
-test_threadPool/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/build
-.PHONY : test_threadPool/fast
+server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+main.o: main.cc.o
+.PHONY : main.o
+
+# target to build an object file
+main.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.cc.o
+.PHONY : main.cc.o
+
+main.i: main.cc.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.cc.i
+.PHONY : main.cc.i
+
+main.s: main.cc.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main.cc.s
+.PHONY : main.cc.s
+
+src/config/config.o: src/config/config.cc.o
+.PHONY : src/config/config.o
+
+# target to build an object file
+src/config/config.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/config/config.cc.o
+.PHONY : src/config/config.cc.o
+
+src/config/config.i: src/config/config.cc.i
+.PHONY : src/config/config.i
+
+# target to preprocess a source file
+src/config/config.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/config/config.cc.i
+.PHONY : src/config/config.cc.i
+
+src/config/config.s: src/config/config.cc.s
+.PHONY : src/config/config.s
+
+# target to generate assembly for a file
+src/config/config.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/config/config.cc.s
+.PHONY : src/config/config.cc.s
+
+src/http/httpConn.o: src/http/httpConn.cc.o
+.PHONY : src/http/httpConn.o
+
+# target to build an object file
+src/http/httpConn.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/http/httpConn.cc.o
+.PHONY : src/http/httpConn.cc.o
+
+src/http/httpConn.i: src/http/httpConn.cc.i
+.PHONY : src/http/httpConn.i
+
+# target to preprocess a source file
+src/http/httpConn.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/http/httpConn.cc.i
+.PHONY : src/http/httpConn.cc.i
+
+src/http/httpConn.s: src/http/httpConn.cc.s
+.PHONY : src/http/httpConn.s
+
+# target to generate assembly for a file
+src/http/httpConn.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/http/httpConn.cc.s
+.PHONY : src/http/httpConn.cc.s
 
 src/lock/locker.o: src/lock/locker.cc.o
 .PHONY : src/lock/locker.o
 
 # target to build an object file
 src/lock/locker.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/lock/locker.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/lock/locker.cc.o
 .PHONY : src/lock/locker.cc.o
 
 src/lock/locker.i: src/lock/locker.cc.i
@@ -142,7 +214,7 @@ src/lock/locker.i: src/lock/locker.cc.i
 
 # target to preprocess a source file
 src/lock/locker.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/lock/locker.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/lock/locker.cc.i
 .PHONY : src/lock/locker.cc.i
 
 src/lock/locker.s: src/lock/locker.cc.s
@@ -150,7 +222,7 @@ src/lock/locker.s: src/lock/locker.cc.s
 
 # target to generate assembly for a file
 src/lock/locker.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/lock/locker.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/lock/locker.cc.s
 .PHONY : src/lock/locker.cc.s
 
 src/mysql/sqlConnectionPool.o: src/mysql/sqlConnectionPool.cc.o
@@ -158,7 +230,7 @@ src/mysql/sqlConnectionPool.o: src/mysql/sqlConnectionPool.cc.o
 
 # target to build an object file
 src/mysql/sqlConnectionPool.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/mysql/sqlConnectionPool.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mysql/sqlConnectionPool.cc.o
 .PHONY : src/mysql/sqlConnectionPool.cc.o
 
 src/mysql/sqlConnectionPool.i: src/mysql/sqlConnectionPool.cc.i
@@ -166,7 +238,7 @@ src/mysql/sqlConnectionPool.i: src/mysql/sqlConnectionPool.cc.i
 
 # target to preprocess a source file
 src/mysql/sqlConnectionPool.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/mysql/sqlConnectionPool.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mysql/sqlConnectionPool.cc.i
 .PHONY : src/mysql/sqlConnectionPool.cc.i
 
 src/mysql/sqlConnectionPool.s: src/mysql/sqlConnectionPool.cc.s
@@ -174,32 +246,56 @@ src/mysql/sqlConnectionPool.s: src/mysql/sqlConnectionPool.cc.s
 
 # target to generate assembly for a file
 src/mysql/sqlConnectionPool.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/src/mysql/sqlConnectionPool.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mysql/sqlConnectionPool.cc.s
 .PHONY : src/mysql/sqlConnectionPool.cc.s
 
-test/test_threadPool.o: test/test_threadPool.cc.o
-.PHONY : test/test_threadPool.o
+src/timer/lst_timer.o: src/timer/lst_timer.cc.o
+.PHONY : src/timer/lst_timer.o
 
 # target to build an object file
-test/test_threadPool.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/test/test_threadPool.cc.o
-.PHONY : test/test_threadPool.cc.o
+src/timer/lst_timer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/timer/lst_timer.cc.o
+.PHONY : src/timer/lst_timer.cc.o
 
-test/test_threadPool.i: test/test_threadPool.cc.i
-.PHONY : test/test_threadPool.i
+src/timer/lst_timer.i: src/timer/lst_timer.cc.i
+.PHONY : src/timer/lst_timer.i
 
 # target to preprocess a source file
-test/test_threadPool.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/test/test_threadPool.cc.i
-.PHONY : test/test_threadPool.cc.i
+src/timer/lst_timer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/timer/lst_timer.cc.i
+.PHONY : src/timer/lst_timer.cc.i
 
-test/test_threadPool.s: test/test_threadPool.cc.s
-.PHONY : test/test_threadPool.s
+src/timer/lst_timer.s: src/timer/lst_timer.cc.s
+.PHONY : src/timer/lst_timer.s
 
 # target to generate assembly for a file
-test/test_threadPool.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_threadPool.dir/build.make CMakeFiles/test_threadPool.dir/test/test_threadPool.cc.s
-.PHONY : test/test_threadPool.cc.s
+src/timer/lst_timer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/timer/lst_timer.cc.s
+.PHONY : src/timer/lst_timer.cc.s
+
+src/webServer/webServer.o: src/webServer/webServer.cc.o
+.PHONY : src/webServer/webServer.o
+
+# target to build an object file
+src/webServer/webServer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/webServer/webServer.cc.o
+.PHONY : src/webServer/webServer.cc.o
+
+src/webServer/webServer.i: src/webServer/webServer.cc.i
+.PHONY : src/webServer/webServer.i
+
+# target to preprocess a source file
+src/webServer/webServer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/webServer/webServer.cc.i
+.PHONY : src/webServer/webServer.cc.i
+
+src/webServer/webServer.s: src/webServer/webServer.cc.s
+.PHONY : src/webServer/webServer.s
+
+# target to generate assembly for a file
+src/webServer/webServer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/webServer/webServer.cc.s
+.PHONY : src/webServer/webServer.cc.s
 
 # Help Target
 help:
@@ -209,16 +305,28 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_threadPool"
+	@echo "... server"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... src/config/config.o"
+	@echo "... src/config/config.i"
+	@echo "... src/config/config.s"
+	@echo "... src/http/httpConn.o"
+	@echo "... src/http/httpConn.i"
+	@echo "... src/http/httpConn.s"
 	@echo "... src/lock/locker.o"
 	@echo "... src/lock/locker.i"
 	@echo "... src/lock/locker.s"
 	@echo "... src/mysql/sqlConnectionPool.o"
 	@echo "... src/mysql/sqlConnectionPool.i"
 	@echo "... src/mysql/sqlConnectionPool.s"
-	@echo "... test/test_threadPool.o"
-	@echo "... test/test_threadPool.i"
-	@echo "... test/test_threadPool.s"
+	@echo "... src/timer/lst_timer.o"
+	@echo "... src/timer/lst_timer.i"
+	@echo "... src/timer/lst_timer.s"
+	@echo "... src/webServer/webServer.o"
+	@echo "... src/webServer/webServer.i"
+	@echo "... src/webServer/webServer.s"
 .PHONY : help
 
 

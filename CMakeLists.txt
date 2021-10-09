@@ -13,6 +13,13 @@ include_directories("/usr/include/mysql")
 link_libraries("/usr/lib/x86_64-linux-gnu")
 set(MYSQL_LIBS mysqlclient)
 
+FILE(GLOB SRC_FILES "./src/config/*.cc"
+                    "./src/http/*.cc"
+                    "./src/lock/*.cc"
+                    "./src/mysql/*.cc"
+                    # "./src/threadpool/*.cc"
+                    "./src/timer/*.cc"
+                    "./src/webServer/*.cc")
 
-add_executable(test_threadPool test/test_threadPool.cc src/lock/locker.cc src/mysql/sqlConnectionPool.cc)
-target_link_libraries(test_threadPool ${MYSQL_LIBS})
+add_executable(server main.cc ${SRC_FILES})
+target_link_libraries(server ${MYSQL_LIBS})
