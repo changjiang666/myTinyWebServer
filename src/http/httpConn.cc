@@ -1,6 +1,7 @@
 #include "http/httpConn.hpp"
 #include <mysql/mysql.h>
 #include <fstream>
+#include <iostream>
 
 // 定义http响应的状态信息
 const char *ok_200_title = "OK";
@@ -41,9 +42,9 @@ void addFd(int epollfd, int fd, bool oneShot, int trigMode) {
     epoll_event event;
     event.data.fd = fd;
     if (1 == trigMode) {
-        event.events = EPOLLIN | EPOLLET | EPOLLHUP;
+        event.events = EPOLLIN | EPOLLET | EPOLLRDHUP;
     } else {
-        event.events = EPOLLIN | EPOLLHUP;
+        event.events = EPOLLIN | EPOLLRDHUP;
     }
 
     if (oneShot) {
@@ -87,6 +88,7 @@ void HttpConn::init(int sockfd,
     m_addr = addr;
     
     addFd(m_epollfd, sockfd, true, m_trigMode);
+    // printf("add listen socket\n");
     m_userCount += 1;
 
     docRoot = root;
@@ -110,8 +112,10 @@ void HttpConn::init() {
     m_method = GET;
     m_url = 0;
     m_version = 0;
+    m_contentLen = 0;
     m_host = 0;
     m_startLine = 0;
+    m_checkIdx = 0;
     m_readIdx = 0;
     m_writeIdx = 0;
     cgi = 0;
@@ -147,6 +151,7 @@ void HttpConn::initMysqlResult(ConnectionPool* connPool) {
     while (MYSQL_ROW row = mysql_fetch_row(result)) {
         std::string name(row[0]), passwd(row[1]);
         users[name] = passwd;
+        std::cout << row[0] << " " << row[1] << std::endl;
     }
 }
 
@@ -192,6 +197,7 @@ bool HttpConn::readOnce() {
         if (bytesRead <= 0) {
             return false;
         }
+        printf("client data: %s\n", m_readBuf);
         return true;
     } else {    //ET模式下读取数据
         while (1) {
@@ -214,8 +220,9 @@ bool HttpConn::readOnce() {
 HttpConn::HTTP_CODE HttpConn::parseRequestLine(char* text) {
     //strpbrk在源字符串（s1）中找出最先含有搜索字符串（s2）
     //中任一字符的位置并返回，若找不到则返回空指针
+    printf("%s\n", text);
     m_url = strpbrk(text, " \t");
-    if (m_url == nullptr) {
+    if (!m_url) {
         return BAD_REQUEST;
     }
     *m_url++ = '\0';
@@ -226,6 +233,7 @@ HttpConn::HTTP_CODE HttpConn::parseRequestLine(char* text) {
         m_method = GET;
     } else if (strcasecmp(method, "POST") == 0) {
         m_method = POST;
+        cgi = 1;
     } else {
         return BAD_REQUEST;
     }
@@ -239,10 +247,10 @@ HttpConn::HTTP_CODE HttpConn::parseRequestLine(char* text) {
 
     // 采用相同的逻辑来判断HTTP版本号
     m_version = strpbrk(m_url, " \t");
-    if (m_version == nullptr) {
+    if (!m_version) {
         return BAD_REQUEST;
     } 
-    *m_version = '\0';
+    *m_version++ = '\0';
     m_version += strspn(m_version, " \t");
     // 仅支持HTTP/1.1
     if (strcasecmp(m_version, "HTTP/1.1") != 0) {
@@ -328,6 +336,7 @@ HttpConn::HTTP_CODE HttpConn::processRead() {
             case CHECK_STATE_REQUESTLINE: {
                 ret = parseRequestLine(text);
                 if (BAD_REQUEST == ret) {
+                    printf("CHECK_STATE_REQUESTLINE\n");
                     return BAD_REQUEST;
                 }
                 break;
@@ -335,6 +344,7 @@ HttpConn::HTTP_CODE HttpConn::processRead() {
             case CHECK_STATE_HEADER: {
                 ret = parseHeaders(text);
                 if (BAD_REQUEST == ret) {
+                    printf("BAD_REQUEST\n");
                     return BAD_REQUEST;
                 } else if (ret == GET_REQUEST) {
                     return doRequest();
@@ -464,6 +474,7 @@ HttpConn::HTTP_CODE HttpConn::doRequest() {
         strncpy(m_realFile + len, m_url, FILENAME_LEN - len - 1);
     }
 
+    std::cout << "request file name: " << m_realFile << std::endl;
     //通过stat获取请求资源文件信息，成功则将信息更新到m_file_stat结构体
     //失败返回NO_RESOURCE状态，表示资源不存在
     if (stat(m_realFile, &m_fileStat) < 0)
@@ -660,6 +671,7 @@ bool HttpConn::processWrite(HTTP_CODE ret) {
 void HttpConn::process() {
     HTTP_CODE ret = processRead();
 
+    std::cout << "read code: " << ret << std::endl;
     //NO_REQUEST，表示请求不完整，需要继续接收请求数据
     if(NO_REQUEST == ret) {
         modFd(m_epollfd, m_sockfd, EPOLLIN, m_trigMode);

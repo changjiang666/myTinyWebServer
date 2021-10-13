@@ -1,3 +1,0 @@
-/data/liucj/myTinyWebServer-master/build/CMakeFiles/rebuild_cache.dir
-/data/liucj/myTinyWebServer-master/build/CMakeFiles/edit_cache.dir
-/data/liucj/myTinyWebServer-master/build/CMakeFiles/server.dir

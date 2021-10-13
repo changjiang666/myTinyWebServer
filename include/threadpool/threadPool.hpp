@@ -69,7 +69,7 @@ ThreadPool<T>::ThreadPool(int actorModel,
             delete[] m_threads;
             throw std::exception();
         }
-        if (pthread_detach(m_threads[i]) != 0) {
+        if (pthread_detach(m_threads[i])) {
             delete[] m_threads;
             throw std::exception();
         } 

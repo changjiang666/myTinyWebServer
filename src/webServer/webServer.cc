@@ -129,11 +129,11 @@ void WebServer::eventListen() {
 
     // 创建epoll内核事件表
     m_epollfd = epoll_create(5);
-    assert(m_epollfd >= 0);
+    assert(m_epollfd != -1);
     epoll_event events[MAX_EVENT_NUMBER];
 
     // 监听m_listenfd上的读事件
-    utils.addfd(m_listenfd, m_epollfd, false, m_listenTrigMode);
+    utils.addfd(m_epollfd, m_listenfd, false, m_listenTrigMode);
     HttpConn::m_epollfd = m_epollfd;
 
     // 创建管道，用于信号和主线程之间的通信
@@ -179,7 +179,7 @@ void WebServer::adjustTimer(util_timer* timer) {
     time_t cur = time(NULL);
     timer->expire = cur + 3 * TIMESLOT;
     utils.m_timer_lst.adjust_timer(timer);
-    printf("%s", "adjust timer once");
+    // printf("%s\n", "adjust timer once");
 }
 
 // 删除定时器
@@ -188,7 +188,7 @@ void WebServer::dealTimer(util_timer* timer, int sockfd) {
     if (timer) {
         utils.m_timer_lst.del_timer(timer);
     }
-    printf("close fd %d", usersTimer[sockfd].sockfd);
+    printf("close fd %d\n", usersTimer[sockfd].sockfd);
 }
 
 // http处理用户数据
@@ -200,6 +200,7 @@ bool WebServer::dealClientData() {
     if (0 == m_listenTrigMode) {
         // listenTrigMode == LT
         int connfd = accept(m_listenfd, (sockaddr*)&clientAddr, &clientAddrLen);
+        printf("exe accept\n");
         if (connfd < 0) {
             printf("accept error: error is: %d", errno);
             return false;
@@ -306,7 +307,7 @@ void WebServer::eventLoop() {
             printf("epoll failure\n");
             break;
         }
-
+        
         for (int i = 0; i < num; ++i) {
             int sockfd = events[i].data.fd;
             
