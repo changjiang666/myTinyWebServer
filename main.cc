@@ -19,6 +19,9 @@ int main(int argc, char* argv[]) {
                 user, passwd, databasename, config.logWrite,
                 config.optLinger, config.trigMode, config.sqlNum,
                 config.threadNum, config.closeLog, config.actorModel);
+    
+    // 日志
+    server.logWrite();
 
     // 数据库
     server.sqlPool();

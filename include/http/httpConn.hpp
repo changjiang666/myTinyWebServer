@@ -4,6 +4,7 @@
 #include "lock/locker.hpp"
 #include "mysql/sqlConnectionPool.hpp"
 #include "threadpool/threadPool.hpp"
+#include "log/log.hpp"
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>

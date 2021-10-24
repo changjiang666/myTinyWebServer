@@ -44,6 +44,11 @@
         "chrono": "cpp",
         "ctime": "cpp",
         "ratio": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "bit": "cpp",
+        "map": "cpp",
+        "iterator": "cpp",
+        "numeric": "cpp",
+        "random": "cpp"
     }
 }

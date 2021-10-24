@@ -45,30 +45,32 @@ bool Locker::unlock() {
 
 
 Cond::Cond() {
-    if (pthread_mutex_init(&m_mutex, nullptr) != 0) {
-        throw std::exception();
-    }
+    // if (pthread_mutex_init(&m_mutex, nullptr) != 0) {
+    //     throw std::exception();
+    // }
     if (pthread_cond_init(&m_cond, nullptr) != 0) {
-        pthread_mutex_destroy(&m_mutex);
+        // pthread_mutex_destroy(&m_mutex);
         throw std::exception();
     }
 }
 
 Cond::~Cond() {
-    pthread_mutex_destroy(&m_mutex);
+    // pthread_mutex_destroy(&m_mutex);
     pthread_cond_destroy(&m_cond);
 }
 
-bool Cond::wait() {
-    pthread_mutex_lock(&m_mutex);
-    if (pthread_cond_wait(&m_cond, &m_mutex) != 0) {
-        pthread_mutex_unlock(&m_mutex);
-        return false;
-    } 
-    pthread_mutex_unlock(&m_mutex);
-    return true;
+bool Cond::wait(pthread_mutex_t* m_mutex) {
+    return pthread_cond_wait(&m_cond, m_mutex) == 0;
+}
+
+bool Cond::timewait(pthread_mutex_t* m_mutex, struct timespec t) {
+    return pthread_cond_timedwait(&m_cond, m_mutex, &t) == 0;
 }
 
 bool Cond::signal() {
     pthread_cond_signal(&m_cond) == 0;
+}
+
+bool Cond::broadcast() {
+    return pthread_cond_broadcast(&m_cond) == 0;
 }

@@ -4,6 +4,7 @@
 #include "threadpool/threadPool.hpp"
 #include "http/httpConn.hpp"
 #include "timer/lst_timer.hpp"
+#include "log/log.hpp"
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>

@@ -1,0 +1,3 @@
+/home/ubuntu/myTinyWebServer/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/myTinyWebServer/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/myTinyWebServer/build/CMakeFiles/test_timer.dir

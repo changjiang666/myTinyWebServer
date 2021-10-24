@@ -17,9 +17,10 @@ FILE(GLOB SRC_FILES "./src/config/*.cc"
                     "./src/http/*.cc"
                     "./src/lock/*.cc"
                     "./src/mysql/*.cc"
+                    "./src/log/*.cc"
                     # "./src/threadpool/*.cc"
                     "./src/timer/*.cc"
                     "./src/webServer/*.cc")
 
-add_executable(server main.cc ${SRC_FILES})
-target_link_libraries(server ${MYSQL_LIBS})
+add_executable(test_timer ./test/test_timer.cc ${SRC_FILES})
+target_link_libraries(test_timer ${MYSQL_LIBS})

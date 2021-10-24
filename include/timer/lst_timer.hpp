@@ -28,16 +28,14 @@
 class util_timer;
 
 //连接资源
-struct client_data
-{
+struct client_data {
     sockaddr_in address;
     int sockfd;
     util_timer *timer;
 };
 
 //定时器类:以一个双向链表实现
-class util_timer
-{
+class util_timer {
 public:
     util_timer() : prev(NULL), next(NULL) {}
 
@@ -55,8 +53,7 @@ public:
 };
 
 //定时器容器类
-class sort_timer_lst
-{
+class sort_timer_lst {
 public:
     sort_timer_lst();
     //常规销毁链表
@@ -71,6 +68,10 @@ public:
     //定时任务处理函数
     void tick();
 
+    util_timer* getHead() {
+        return head;
+    }
+    
 private:
     //私有成员，被公有成员add_timer和adjust_time调用
     //主要用于调整链表内部结点
@@ -80,8 +81,7 @@ private:
     util_timer *tail;
 };
 
-class Utils
-{
+class Utils {
 public:
     Utils() {}
     ~Utils() {}

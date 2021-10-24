@@ -31,6 +31,9 @@ public:
 
     bool lock();
     bool unlock();
+    pthread_mutex_t *get () {
+        return &m_mutex;
+    }
 
 private:
     pthread_mutex_t m_mutex;
@@ -42,11 +45,13 @@ public:
     Cond();
     ~Cond();
 
-    bool wait();
+    bool wait(pthread_mutex_t* m_mutex);
+    bool timewait(pthread_mutex_t* m_mutex, struct timespec t);
     bool signal();
+    bool broadcast();
 
 private:
-    pthread_mutex_t m_mutex;
+    // pthread_mutex_t m_mutex;
     pthread_cond_t m_cond;
 };
 #endif

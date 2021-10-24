@@ -72,7 +72,14 @@ void WebServer::trigMode() {
 
 // 初始化日志
 void WebServer::logWrite() {
-
+    if (0 == m_closeLog)
+    {
+        //初始化日志
+        if (1 == m_logWrite)
+            Log::get_instance()->init("./ServerLog", m_closeLog, 2000, 800000, 800);
+        else
+            Log::get_instance()->init("./ServerLog", m_closeLog, 2000, 800000, 0);
+    }
 }
 
 // 初始化数据库连接池
