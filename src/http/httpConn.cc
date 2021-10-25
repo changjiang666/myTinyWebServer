@@ -131,7 +131,7 @@ void HttpConn::init() {
 // 关闭一个连接，用户数减1
 void HttpConn::closeConn(bool realClose) {
     if (realClose && m_sockfd != -1) {
-        printf("close %d\n", m_sockfd);
+        LOG_INFO("close %d, Byby", m_sockfd);
         removeFd(m_epollfd, m_sockfd);
         m_sockfd = -1;
         m_userCount -= 1;
@@ -144,14 +144,14 @@ void HttpConn::initMysqlResult(ConnectionPool* connPool) {
     ConnectionPoolRAII mysqlConn(&mysql, connPool);
 
     if (mysql_query(mysql, "SELECT username,passwd FROM user")) {
-        printf("SELECT error:%s\n", mysql_error(mysql));
+        LOG_ERROR("SELECT error:%s", mysql_error(mysql));
     }
 
     MYSQL_RES* result = mysql_store_result(mysql);
     while (MYSQL_ROW row = mysql_fetch_row(result)) {
         std::string name(row[0]), passwd(row[1]);
         users[name] = passwd;
-        std::cout << row[0] << " " << row[1] << std::endl;
+        // std::cout << row[0] << " " << row[1] << std::endl;
     }
 }
 
@@ -197,7 +197,7 @@ bool HttpConn::readOnce() {
         if (bytesRead <= 0) {
             return false;
         }
-        printf("client data: %s\n", m_readBuf);
+        LOG_INFO("(readOnce function)client data: %s", m_readBuf);
         return true;
     } else {    //ET模式下读取数据
         while (1) {
@@ -220,7 +220,7 @@ bool HttpConn::readOnce() {
 HttpConn::HTTP_CODE HttpConn::parseRequestLine(char* text) {
     //strpbrk在源字符串（s1）中找出最先含有搜索字符串（s2）
     //中任一字符的位置并返回，若找不到则返回空指针
-    printf("%s\n", text);
+    // printf("%s\n", text);
     m_url = strpbrk(text, " \t");
     if (!m_url) {
         return BAD_REQUEST;
@@ -309,7 +309,7 @@ HttpConn::HTTP_CODE HttpConn::parseHeaders(char* text) {
         text += strspn(text, " \t");
         m_host = text;
     } else {
-        printf("oop!unkown header: %s", text);
+        LOG_INFO("oop!unkown header: %s", text);
     }
     return NO_REQUEST;
 }
@@ -332,11 +332,12 @@ HttpConn::HTTP_CODE HttpConn::processRead() {
     while ( (m_checkState == CHECK_STATE_CONTENT && lineStatus == LINE_OK) || ((lineStatus = parseLine()) == LINE_OK) ) {
         text = getLine();
         m_startLine = m_checkIdx;
+        LOG_INFO("(processRead function)current process line: %s", text)
         switch (m_checkState) {
             case CHECK_STATE_REQUESTLINE: {
                 ret = parseRequestLine(text);
                 if (BAD_REQUEST == ret) {
-                    printf("CHECK_STATE_REQUESTLINE\n");
+                    LOG_ERROR("(processRead function)CHECK_STATE_REQUESTLINE");
                     return BAD_REQUEST;
                 }
                 break;
@@ -344,7 +345,7 @@ HttpConn::HTTP_CODE HttpConn::processRead() {
             case CHECK_STATE_HEADER: {
                 ret = parseHeaders(text);
                 if (BAD_REQUEST == ret) {
-                    printf("BAD_REQUEST\n");
+                    LOG_ERROR("(processRead function)BAD_REQUEST");
                     return BAD_REQUEST;
                 } else if (ret == GET_REQUEST) {
                     return doRequest();
@@ -474,7 +475,7 @@ HttpConn::HTTP_CODE HttpConn::doRequest() {
         strncpy(m_realFile + len, m_url, FILENAME_LEN - len - 1);
     }
 
-    std::cout << "request file name: " << m_realFile << std::endl;
+    LOG_INFO("(doRequest function)request file name: %s", m_realFile);
     //通过stat获取请求资源文件信息，成功则将信息更新到m_file_stat结构体
     //失败返回NO_RESOURCE状态，表示资源不存在
     if (stat(m_realFile, &m_fileStat) < 0)
@@ -570,7 +571,7 @@ bool HttpConn::addResponse(const char* format, ...) {
     }
     m_writeIdx += len;
     va_end(arg_list);
-    printf("request:%s", m_writeBuf);
+    LOG_INFO("(addResponse function)request:%s", m_writeBuf);
     return true;
 }
 
@@ -671,7 +672,7 @@ bool HttpConn::processWrite(HTTP_CODE ret) {
 void HttpConn::process() {
     HTTP_CODE ret = processRead();
 
-    std::cout << "read code: " << ret << std::endl;
+    // std::cout << "read code: " << ret << std::endl;
     //NO_REQUEST，表示请求不完整，需要继续接收请求数据
     if(NO_REQUEST == ret) {
         modFd(m_epollfd, m_sockfd, EPOLLIN, m_trigMode);

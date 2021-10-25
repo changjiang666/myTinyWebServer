@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/myTinyWebServer/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test_timer.dir/all
+all: CMakeFiles/server.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test_timer.dir/clean
+clean: CMakeFiles/server.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test_timer.dir
+# Target rules for target CMakeFiles/server.dir
 
 # All Build rule for target.
-CMakeFiles/test_timer.dir/all:
-	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/depend
-	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/myTinyWebServer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target test_timer"
-.PHONY : CMakeFiles/test_timer.dir/all
+CMakeFiles/server.dir/all:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/myTinyWebServer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target server"
+.PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test_timer.dir/rule: cmake_check_build_system
+CMakeFiles/server.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/myTinyWebServer/build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_timer.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/myTinyWebServer/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_timer.dir/rule
+.PHONY : CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-test_timer: CMakeFiles/test_timer.dir/rule
+server: CMakeFiles/server.dir/rule
 
-.PHONY : test_timer
+.PHONY : server
 
 # clean rule for target.
-CMakeFiles/test_timer.dir/clean:
-	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/clean
-.PHONY : CMakeFiles/test_timer.dir/clean
+CMakeFiles/server.dir/clean:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
+.PHONY : CMakeFiles/server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
