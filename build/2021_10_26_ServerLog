@@ -1,0 +1,391 @@
+2021-10-26 20:05:38.911274 [info]: HTTP Server start,  Welcome!
+2021-10-26 20:05:39.088750 [info]: WebServer logWrite finished, open log
+2021-10-26 20:06:48.360572 [info]: HTTP Server start,  Welcome!
+2021-10-26 20:06:48.366922 [info]: WebServer logWrite finished, open log
+2021-10-26 20:06:48.965187 [info]: WebServer sqlPool init finished
+2021-10-26 20:06:48.975764 [info]: WebServer threadPool init finished
+2021-10-26 20:06:48.975789 [info]: WebServer epoll trigMode finished, listenTrigMode = LT, connTrigMode = LT
+2021-10-26 20:06:48.975794 [info]: actorModel = reactor
+2021-10-26 20:06:53.977722 [info]: time tick
+2021-10-26 20:06:54.019953 [info]: adjust timer once
+2021-10-26 20:06:54.025038 [info]: (readOnce function)client data: GET / HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995
+
+
+2021-10-26 20:06:54.025056 [info]: (processRead function)current process line: GET / HTTP/1.1
+2021-10-26 20:06:54.025063 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:06:54.025067 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:06:54.025071 [info]: (processRead function)current process line: Cache-Control: max-age=0
+2021-10-26 20:06:54.025075 [info]: oop!unkown header: Cache-Control: max-age=0
+2021-10-26 20:06:54.025079 [info]: (processRead function)current process line: Upgrade-Insecure-Requests: 1
+2021-10-26 20:06:54.025083 [info]: oop!unkown header: Upgrade-Insecure-Requests: 1
+2021-10-26 20:06:54.025088 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:54.025092 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:54.025098 [info]: (processRead function)current process line: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:06:54.025102 [info]: oop!unkown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:06:54.025107 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:54.025112 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:54.025116 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:54.025121 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:54.025125 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995
+2021-10-26 20:06:54.025129 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995
+2021-10-26 20:06:54.025133 [info]: (processRead function)current process line: 
+2021-10-26 20:06:54.025139 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/judge.html
+2021-10-26 20:06:54.025763 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:06:54.025777 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:612
+
+2021-10-26 20:06:54.025783 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:612
+Connection:keep-alive
+
+2021-10-26 20:06:54.025788 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:612
+Connection:keep-alive
+
+
+2021-10-26 20:06:54.025798 [info]: adjust timer once
+2021-10-26 20:06:54.295192 [info]: adjust timer once
+2021-10-26 20:06:54.297402 [info]: (readOnce function)client data: GET /favicon.ico HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://146.56.226.114:9006/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995
+
+
+2021-10-26 20:06:54.297418 [info]: (processRead function)current process line: GET /favicon.ico HTTP/1.1
+2021-10-26 20:06:54.297425 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:06:54.297429 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:06:54.297434 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:54.297438 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:54.297443 [info]: (processRead function)current process line: Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+2021-10-26 20:06:54.297447 [info]: oop!unkown header: Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+2021-10-26 20:06:54.297451 [info]: (processRead function)current process line: Referer: http://146.56.226.114:9006/
+2021-10-26 20:06:54.297455 [info]: oop!unkown header: Referer: http://146.56.226.114:9006/
+2021-10-26 20:06:54.297459 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:54.297463 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:54.297467 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:54.297470 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:54.297474 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995
+2021-10-26 20:06:54.297478 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995
+2021-10-26 20:06:54.297483 [info]: (processRead function)current process line: 
+2021-10-26 20:06:54.297488 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/favicon.ico
+2021-10-26 20:06:54.297515 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:06:54.297520 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:4286
+
+2021-10-26 20:06:54.297525 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:4286
+Connection:keep-alive
+
+2021-10-26 20:06:54.297529 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:4286
+Connection:keep-alive
+
+
+2021-10-26 20:06:54.297538 [info]: adjust timer once
+2021-10-26 20:06:56.274441 [info]: adjust timer once
+2021-10-26 20:06:56.277664 [info]: (readOnce function)client data: POST /0 HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+Content-Length: 0
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://146.56.226.114:9006
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://146.56.226.114:9006/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+
+
+2021-10-26 20:06:56.277700 [info]: (processRead function)current process line: POST /0 HTTP/1.1
+2021-10-26 20:06:56.277707 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:06:56.277720 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:06:56.277726 [info]: (processRead function)current process line: Content-Length: 0
+2021-10-26 20:06:56.277733 [info]: (processRead function)current process line: Cache-Control: max-age=0
+2021-10-26 20:06:56.277739 [info]: oop!unkown header: Cache-Control: max-age=0
+2021-10-26 20:06:56.277745 [info]: (processRead function)current process line: Upgrade-Insecure-Requests: 1
+2021-10-26 20:06:56.277752 [info]: oop!unkown header: Upgrade-Insecure-Requests: 1
+2021-10-26 20:06:56.277758 [info]: (processRead function)current process line: Origin: http://146.56.226.114:9006
+2021-10-26 20:06:56.277764 [info]: oop!unkown header: Origin: http://146.56.226.114:9006
+2021-10-26 20:06:56.277771 [info]: (processRead function)current process line: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:06:56.277781 [info]: oop!unkown header: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:06:56.277788 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:56.277794 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:56.277801 [info]: (processRead function)current process line: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:06:56.277808 [info]: oop!unkown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:06:56.277815 [info]: (processRead function)current process line: Referer: http://146.56.226.114:9006/
+2021-10-26 20:06:56.277821 [info]: oop!unkown header: Referer: http://146.56.226.114:9006/
+2021-10-26 20:06:56.277826 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:56.277830 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:56.277834 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:56.277838 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:56.277843 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:06:56.277846 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:06:56.277850 [info]: (processRead function)current process line: 
+2021-10-26 20:06:56.277855 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/register.html
+2021-10-26 20:06:56.278993 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:06:56.279004 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:744
+
+2021-10-26 20:06:56.279008 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:744
+Connection:keep-alive
+
+2021-10-26 20:06:56.279012 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:744
+Connection:keep-alive
+
+
+2021-10-26 20:06:56.279023 [info]: adjust timer once
+2021-10-26 20:06:58.924569 [info]: adjust timer once
+2021-10-26 20:06:58.928311 [info]: (readOnce function)client data: POST /1 HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+Content-Length: 0
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://146.56.226.114:9006
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://146.56.226.114:9006/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+
+
+2021-10-26 20:06:58.928335 [info]: (processRead function)current process line: POST /1 HTTP/1.1
+2021-10-26 20:06:58.928342 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:06:58.928347 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:06:58.928350 [info]: (processRead function)current process line: Content-Length: 0
+2021-10-26 20:06:58.928355 [info]: (processRead function)current process line: Cache-Control: max-age=0
+2021-10-26 20:06:58.928359 [info]: oop!unkown header: Cache-Control: max-age=0
+2021-10-26 20:06:58.928363 [info]: (processRead function)current process line: Upgrade-Insecure-Requests: 1
+2021-10-26 20:06:58.928366 [info]: oop!unkown header: Upgrade-Insecure-Requests: 1
+2021-10-26 20:06:58.928370 [info]: (processRead function)current process line: Origin: http://146.56.226.114:9006
+2021-10-26 20:06:58.928374 [info]: oop!unkown header: Origin: http://146.56.226.114:9006
+2021-10-26 20:06:58.928378 [info]: (processRead function)current process line: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:06:58.928383 [info]: oop!unkown header: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:06:58.928387 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:58.928398 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:06:58.928403 [info]: (processRead function)current process line: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:06:58.928407 [info]: oop!unkown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:06:58.928411 [info]: (processRead function)current process line: Referer: http://146.56.226.114:9006/
+2021-10-26 20:06:58.928415 [info]: oop!unkown header: Referer: http://146.56.226.114:9006/
+2021-10-26 20:06:58.928419 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:58.928422 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:06:58.928426 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:58.928430 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:06:58.928434 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:06:58.928438 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:06:58.928441 [info]: (processRead function)current process line: 
+2021-10-26 20:06:58.928446 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/log.html
+2021-10-26 20:06:58.929482 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:06:58.929494 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:746
+
+2021-10-26 20:06:58.929499 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:746
+Connection:keep-alive
+
+2021-10-26 20:06:58.929503 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:746
+Connection:keep-alive
+
+
+2021-10-26 20:06:58.929513 [info]: adjust timer once
+2021-10-26 20:06:58.977761 [info]: time tick
+2021-10-26 20:07:03.978804 [info]: time tick
+2021-10-26 20:07:08.980476 [info]: time tick
+2021-10-26 20:07:13.331301 [info]: adjust timer once
+2021-10-26 20:07:13.333753 [info]: (readOnce function)client data: POST /2CGISQL.cgi HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+Content-Length: 21
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://146.56.226.114:9006
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://146.56.226.114:9006/1
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+
+user=lcj&password=123
+2021-10-26 20:07:13.333772 [info]: (processRead function)current process line: POST /2CGISQL.cgi HTTP/1.1
+2021-10-26 20:07:13.333779 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:07:13.333783 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:07:13.333787 [info]: (processRead function)current process line: Content-Length: 21
+2021-10-26 20:07:13.333792 [info]: (processRead function)current process line: Cache-Control: max-age=0
+2021-10-26 20:07:13.333796 [info]: oop!unkown header: Cache-Control: max-age=0
+2021-10-26 20:07:13.333800 [info]: (processRead function)current process line: Upgrade-Insecure-Requests: 1
+2021-10-26 20:07:13.333803 [info]: oop!unkown header: Upgrade-Insecure-Requests: 1
+2021-10-26 20:07:13.333807 [info]: (processRead function)current process line: Origin: http://146.56.226.114:9006
+2021-10-26 20:07:13.333811 [info]: oop!unkown header: Origin: http://146.56.226.114:9006
+2021-10-26 20:07:13.333815 [info]: (processRead function)current process line: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:07:13.333819 [info]: oop!unkown header: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:07:13.333823 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:07:13.333827 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:07:13.333831 [info]: (processRead function)current process line: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:07:13.333835 [info]: oop!unkown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:07:13.333839 [info]: (processRead function)current process line: Referer: http://146.56.226.114:9006/1
+2021-10-26 20:07:13.333843 [info]: oop!unkown header: Referer: http://146.56.226.114:9006/1
+2021-10-26 20:07:13.333847 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:07:13.333850 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:07:13.333854 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:07:13.333858 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:07:13.333862 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:07:13.333866 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:07:13.333870 [info]: (processRead function)current process line: 
+2021-10-26 20:07:13.333874 [info]: (processRead function)current process line: user=lcj&password=123
+2021-10-26 20:07:13.345111 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/welcome.html
+2021-10-26 20:07:13.346240 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:07:13.346251 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:750
+
+2021-10-26 20:07:13.346255 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:750
+Connection:keep-alive
+
+2021-10-26 20:07:13.346262 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:750
+Connection:keep-alive
+
+
+2021-10-26 20:07:13.346274 [info]: adjust timer once
+2021-10-26 20:07:13.981782 [info]: time tick
+2021-10-26 20:07:16.348321 [info]: adjust timer once
+2021-10-26 20:07:16.351830 [info]: (readOnce function)client data: POST /5 HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+Content-Length: 0
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://146.56.226.114:9006
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://146.56.226.114:9006/2CGISQL.cgi
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+
+
+2021-10-26 20:07:16.351860 [info]: (processRead function)current process line: POST /5 HTTP/1.1
+2021-10-26 20:07:16.351869 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:07:16.351876 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:07:16.351882 [info]: (processRead function)current process line: Content-Length: 0
+2021-10-26 20:07:16.351888 [info]: (processRead function)current process line: Cache-Control: max-age=0
+2021-10-26 20:07:16.351894 [info]: oop!unkown header: Cache-Control: max-age=0
+2021-10-26 20:07:16.351900 [info]: (processRead function)current process line: Upgrade-Insecure-Requests: 1
+2021-10-26 20:07:16.351906 [info]: oop!unkown header: Upgrade-Insecure-Requests: 1
+2021-10-26 20:07:16.351912 [info]: (processRead function)current process line: Origin: http://146.56.226.114:9006
+2021-10-26 20:07:16.351918 [info]: oop!unkown header: Origin: http://146.56.226.114:9006
+2021-10-26 20:07:16.351931 [info]: (processRead function)current process line: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:07:16.351942 [info]: oop!unkown header: Content-Type: application/x-www-form-urlencoded
+2021-10-26 20:07:16.351948 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:07:16.351954 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:07:16.351961 [info]: (processRead function)current process line: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:07:16.351968 [info]: oop!unkown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+2021-10-26 20:07:16.351975 [info]: (processRead function)current process line: Referer: http://146.56.226.114:9006/2CGISQL.cgi
+2021-10-26 20:07:16.351981 [info]: oop!unkown header: Referer: http://146.56.226.114:9006/2CGISQL.cgi
+2021-10-26 20:07:16.351987 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:07:16.351992 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:07:16.351997 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:07:16.352001 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:07:16.352005 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:07:16.352009 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:07:16.352019 [info]: (processRead function)current process line: 
+2021-10-26 20:07:16.352024 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/picture.html
+2021-10-26 20:07:16.356625 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:07:16.356641 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:375
+
+2021-10-26 20:07:16.356645 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:375
+Connection:keep-alive
+
+2021-10-26 20:07:16.356649 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:375
+Connection:keep-alive
+
+
+2021-10-26 20:07:16.356660 [info]: adjust timer once
+2021-10-26 20:07:16.410892 [info]: adjust timer once
+2021-10-26 20:07:16.410967 [info]: (readOnce function)client data: GET /xxx.jpg HTTP/1.1
+Host: 146.56.226.114:9006
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://146.56.226.114:9006/5
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+
+
+2021-10-26 20:07:16.410975 [info]: (processRead function)current process line: GET /xxx.jpg HTTP/1.1
+2021-10-26 20:07:16.410981 [info]: (processRead function)current process line: Host: 146.56.226.114:9006
+2021-10-26 20:07:16.410986 [info]: (processRead function)current process line: Connection: keep-alive
+2021-10-26 20:07:16.410990 [info]: (processRead function)current process line: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:07:16.410994 [info]: oop!unkown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+2021-10-26 20:07:16.410998 [info]: (processRead function)current process line: Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+2021-10-26 20:07:16.411002 [info]: oop!unkown header: Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+2021-10-26 20:07:16.411006 [info]: (processRead function)current process line: Referer: http://146.56.226.114:9006/5
+2021-10-26 20:07:16.411010 [info]: oop!unkown header: Referer: http://146.56.226.114:9006/5
+2021-10-26 20:07:16.411013 [info]: (processRead function)current process line: Accept-Encoding: gzip, deflate
+2021-10-26 20:07:16.411017 [info]: oop!unkown header: Accept-Encoding: gzip, deflate
+2021-10-26 20:07:16.411021 [info]: (processRead function)current process line: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:07:16.411026 [info]: oop!unkown header: Accept-Language: zh-CN,zh;q=0.9
+2021-10-26 20:07:16.411031 [info]: (processRead function)current process line: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:07:16.411037 [info]: oop!unkown header: Cookie: _ga=GA1.1.214393385.1635061248; _gid=GA1.1.954605756.1635163995; _gat=1
+2021-10-26 20:07:16.411043 [info]: (processRead function)current process line: 
+2021-10-26 20:07:16.411050 [info]: (doRequest function)request file name: /home/ubuntu/myTinyWebServer/build/root/xxx.jpg
+2021-10-26 20:07:16.411088 [info]: (addResponse function)request:HTTP/1.1 200 OK
+
+2021-10-26 20:07:16.411094 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:6007312
+
+2021-10-26 20:07:16.411099 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:6007312
+Connection:keep-alive
+
+2021-10-26 20:07:16.411104 [info]: (addResponse function)request:HTTP/1.1 200 OK
+Content-Length:6007312
+Connection:keep-alive
+
+
+2021-10-26 20:07:16.411113 [info]: adjust timer once
+2021-10-26 20:07:16.453606 [info]: adjust timer once
+2021-10-26 20:07:16.482975 [info]: adjust timer once
+2021-10-26 20:07:16.510844 [info]: adjust timer once
+2021-10-26 20:07:18.983349 [info]: time tick
+2021-10-26 20:07:19.048960 [info]: adjust timer once
+2021-10-26 20:07:21.598061 [info]: adjust timer once
+2021-10-26 20:07:23.984496 [info]: time tick
+2021-10-26 20:07:24.127471 [info]: adjust timer once
+2021-10-26 20:07:24.685140 [info]: close fd 17
+2021-10-26 20:07:28.985531 [info]: time tick

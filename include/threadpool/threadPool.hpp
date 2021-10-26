@@ -96,6 +96,15 @@ bool ThreadPool<T>::append(T *request) {
 
 template<typename T>
 bool ThreadPool<T>::append(T* request, int state) {
+    m_queueLocker.lock();
+    if (m_workQueue.size() >= m_maxReq) {
+        m_queueLocker.unlock();
+        return false;
+    }
+    request->m_state = state;
+    m_workQueue.push_back(request);
+    m_queueLocker.unlock();
+    m_queueState.post();
     return true;
 }
 
@@ -110,7 +119,7 @@ void* ThreadPool<T>::worker(void* arg) {
 // T这个任务类，必须有MYSQL* mysql 和 process的处理函数
 template<typename T> 
 void ThreadPool<T>::run() {
-    while (true) {
+     while (true) {
         m_queueState.wait();
         m_queueLocker.lock();
         if (m_workQueue.empty()) {
@@ -124,8 +133,30 @@ void ThreadPool<T>::run() {
         if (request == nullptr) {
             continue;
         }
-        ConnectionPoolRAII mysqlConn(&request->mysql, m_connPool);
-        request->process();
+
+        // reactor
+        if (1 == m_actorModel) {
+            if (0 == request->m_state) {
+                if (request->readOnce()){
+                    request->improv = 1;
+                    ConnectionPoolRAII mysqlConn(&request->mysql, m_connPool);
+                    request->process();
+                } else {
+                    request->improv = 1;
+                    request->timerFlag = 1;
+                }
+            } else {
+                if (request->write()) {
+                    request->improv = 1;
+                } else {
+                    request->improv = 1;
+                    request->timerFlag = 1;
+                }
+            }
+        } else {    //proactor
+            ConnectionPoolRAII mysqlConn(&request->mysql, m_connPool);
+            request->process();
+        } 
     }
 }
 #endif

@@ -71,6 +71,7 @@ void WebServer::trigMode() {
     std::string listenMode = m_listenTrigMode == 0 ? "LT" : "ET";
     std::string connMode = m_connTrigMode == 0 ? "LT" : "ET";
     LOG_INFO("WebServer epoll trigMode finished, listenTrigMode = %s, connTrigMode = %s", listenMode.c_str(), connMode.c_str());
+    LOG_INFO("actorModel = %s", m_actorModel == 0 ? "proactor" : "reactor");
 }
 
 // 初始化日志
@@ -279,6 +280,20 @@ void WebServer::dealRread(int sockfd) {
     util_timer* timer = usersTimer[sockfd].timer;
     if (1 == m_actorModel) {
         // reactor
+        if (timer) {
+            adjustTimer(timer);
+        }
+        m_threadPool->append(users + sockfd, 0);
+        while (1) {
+            if (1 == users[sockfd].improv) {
+                if (1 == users[sockfd].timerFlag) {
+                    dealTimer(timer, sockfd);
+                    users[sockfd].timerFlag = 0;
+                }
+                users[sockfd].improv = 0;
+                break;
+            }
+        }
     } else {
         // proactor
         if (users[sockfd].readOnce()) {
@@ -299,6 +314,20 @@ void WebServer::dealWrite(int sockfd) {
     util_timer* timer = usersTimer[sockfd].timer;
     if (1 == m_actorModel) {
         // reactor
+        if (timer) {
+            adjustTimer(timer);
+        }
+        m_threadPool->append(users + sockfd, 1);
+        while (1) {
+            if (1 == users[sockfd].improv) {
+                if (1 == users[sockfd].timerFlag) {
+                    dealTimer(timer, sockfd);
+                    users[sockfd].timerFlag = 0;
+                }
+                users[sockfd].improv = 0;
+                break;
+            }
+        }
     } else {
         // proactor
         if (users[sockfd].write()) {
